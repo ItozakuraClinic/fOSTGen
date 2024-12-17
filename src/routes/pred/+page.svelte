@@ -1,5 +1,5 @@
 <script>
-	import HstTemplate from "$lib/hst/hst-template.svelte";
+	import PredTemplate from "$lib/pred-template.svelte";
 </script>
 
-<HstTemplate />
+<PredTemplate />

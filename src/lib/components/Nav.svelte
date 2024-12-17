@@ -5,7 +5,7 @@
 <nav class="flex justify-between bg-blue-500 text-white">
 	<ul class="flex items-center space-x-4 m-auto">
 		<li class={`nav-item ${currentPage === 'hst' ? 'active' : ''}`}>
-			<a href="/" class="text-white hover:text-blue-100">HST</a>
+			<a href="/hst" class="text-white hover:text-blue-100">HST</a>
 		</li>
 		<li class={`nav-item ${currentPage === 'pred' ? 'active' : ''}`}>
 			<a href="/pred" class="text-white hover:text-blue-100">PREDICTION</a>
