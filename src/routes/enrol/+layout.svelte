@@ -1,10 +1,9 @@
 <script>
-	import Infoform from '$lib/components/Infoform.svelte';
-	let { children } = $props();
+  import Infoform from '$lib/components/Infoform.svelte';
+  let { children } = $props();
 </script>
 
-<div class="flex flex-row m-auto">
-	{@render children()}
-	<Infoform />
+<div class="m-auto flex flex-row">
+  {@render children()}
+  <Infoform />
 </div>
-
