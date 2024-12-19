@@ -1,6 +1,8 @@
 <script>
   import bg from '$lib/logo/bg.png';
   import logo from '$lib/logo/logo.jpeg';
+
+  import { studentInfo, gender,dob } from '$lib/state';
 </script>
 
 <div class="body" style="margin: 12pt;">
@@ -150,14 +152,18 @@
             <div class="wcdiv" style="left:5.4pt;">
               <span
                 class="wcspan wctext003"
-                style="font-size:10.5pt; left:0pt; top:2.63pt; line-height:11.98pt;">夏伊旻</span
-              >
+                contenteditable="plaintext-only"
+                style="font-size:10.5pt; left:0pt; top:2.63pt; line-height:11.98pt;"
+                bind:innerText={$studentInfo.fullname}
+              ></span>
             </div>
             <div class="wcdiv" style="left:5.4pt; top:15.6pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:0pt; top:1.39pt; line-height:12.82pt;">Yimin Xia</span
-              >
+                contenteditable="plaintext-only"
+                style="font-size:10.5pt; left:0pt; top:1.39pt; line-height:12.82pt;"
+                bind:innerText={$studentInfo.bopomofo}
+              ></span>
             </div>
           </div>
           <div class="wcdiv" style="left:265.7pt; clip:rect(0pt,139.35pt,32.2pt,0pt);">
@@ -188,15 +194,18 @@
             <div class="wcdiv" style="left:5.4pt;">
               <span
                 class="wcspan wctext003"
-                style="font-size:10.5pt; left:0pt; top:2.63pt; line-height:11.98pt;">身份证</span
-              >
+                contenteditable="plaintext-only"
+                style="font-size:10.5pt; left:0pt; top:2.63pt; line-height:11.98pt;"
+                bind:innerText={$studentInfo.idtp}
+              ></span>
             </div>
             <div class="wcdiv" style="left:5.4pt; top:15.6pt;">
               <span
                 class="wcspan wctext004"
+                contenteditable="plaintext-only"
                 style="font-size:10.5pt; left:0pt; top:1.39pt; line-height:12.82pt;"
-                >331081200609085924</span
-              >
+                bind:innerText={$studentInfo.idno}
+              ></span>
             </div>
           </div>
         </div>
@@ -219,14 +228,16 @@
             <div class="wcdiv" style="left:5.4pt;">
               <span
                 class="wcspan wctext003"
-                style="font-size:10.5pt; left:0pt; top:2.63pt; line-height:11.98pt;">女</span
-              >
+                contenteditable="plaintext-only"
+                style="font-size:10.5pt; left:0pt; top:2.63pt; line-height:11.98pt;"
+              >{$gender.zh}</span>
             </div>
             <div class="wcdiv" style="left:5.4pt; top:15.6pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:0pt; top:1.39pt; line-height:12.82pt;">Female</span
-              >
+                contenteditable="plaintext-only"
+                style="font-size:10.5pt; left:0pt; top:1.39pt; line-height:12.82pt;"
+              >{$gender.en}</span>
             </div>
           </div>
           <div class="wcdiv" style="left:265.7pt; clip:rect(0pt,139.35pt,32.2pt,0pt);">
@@ -249,7 +260,7 @@
             <div class="wcdiv" style="left:5.4pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:0pt; top:1.66pt; line-height:12.82pt;">2006</span
+                style="font-size:10.5pt; left:0pt; top:1.66pt; line-height:12.82pt;">{$dob.yob}</span
               >
               <span
                 class="wcspan wctext003"
@@ -257,7 +268,7 @@
               >
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:37.04pt; top:1.66pt; line-height:12.82pt;">09</span
+                style="font-size:10.5pt; left:37.04pt; top:1.66pt; line-height:12.82pt;">{$dob.mob}</span
               >
               <span
                 class="wcspan wctext003"
@@ -265,7 +276,7 @@
               >
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:63.43pt; top:1.66pt; line-height:12.82pt;">08</span
+                style="font-size:10.5pt; left:63.43pt; top:1.66pt; line-height:12.82pt;">{$dob.dob}</span
               >
               <span
                 class="wcspan wctext003"
@@ -276,7 +287,7 @@
               <span
                 class="wcspan wctext004"
                 style="font-size:10.5pt; left:0pt; top:1.39pt; line-height:12.82pt;"
-                >08/09/2006</span
+                >{$dob.dob}/{$dob.mob}/{$dob.yob}</span
               >
             </div>
           </div>
