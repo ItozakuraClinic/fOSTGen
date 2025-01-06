@@ -2,7 +2,7 @@
   import bg from '$lib/logo/bg.png';
   import logo from '$lib/logo/logo.jpeg';
 
-  import { studentInfo, gender,dob } from '$lib/state';
+  import { studentInfo, gender, dob, scoresObj } from '$lib/state';
 </script>
 
 <div class="body" style="margin: 12pt;">
@@ -230,14 +230,16 @@
                 class="wcspan wctext003"
                 contenteditable="plaintext-only"
                 style="font-size:10.5pt; left:0pt; top:2.63pt; line-height:11.98pt;"
-              >{$gender.zh}</span>
+                >{$gender.zh}</span
+              >
             </div>
             <div class="wcdiv" style="left:5.4pt; top:15.6pt;">
               <span
                 class="wcspan wctext004"
                 contenteditable="plaintext-only"
                 style="font-size:10.5pt; left:0pt; top:1.39pt; line-height:12.82pt;"
-              >{$gender.en}</span>
+                >{$gender.en}</span
+              >
             </div>
           </div>
           <div class="wcdiv" style="left:265.7pt; clip:rect(0pt,139.35pt,32.2pt,0pt);">
@@ -260,7 +262,8 @@
             <div class="wcdiv" style="left:5.4pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:0pt; top:1.66pt; line-height:12.82pt;">{$dob.yob}</span
+                style="font-size:10.5pt; left:0pt; top:1.66pt; line-height:12.82pt;"
+                >{$dob.yob}</span
               >
               <span
                 class="wcspan wctext003"
@@ -268,7 +271,8 @@
               >
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:37.04pt; top:1.66pt; line-height:12.82pt;">{$dob.mob}</span
+                style="font-size:10.5pt; left:37.04pt; top:1.66pt; line-height:12.82pt;"
+                >{$dob.mob}</span
               >
               <span
                 class="wcspan wctext003"
@@ -276,7 +280,8 @@
               >
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:63.43pt; top:1.66pt; line-height:12.82pt;">{$dob.dob}</span
+                style="font-size:10.5pt; left:63.43pt; top:1.66pt; line-height:12.82pt;"
+                >{$dob.dob}</span
               >
               <span
                 class="wcspan wctext003"
@@ -641,7 +646,7 @@
             <div class="wcdiv" style="left:5.4pt; top:0.5pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:27.4pt; top:9.19pt; line-height:12.82pt;">91</span
+                style="font-size:10.5pt; left:27.4pt; top:9.19pt; line-height:12.82pt;">{$scoresObj}</span
               >
             </div>
           </div>
@@ -649,7 +654,7 @@
             <div class="wcdiv" style="left:5.4pt; top:0.5pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:27.4pt; top:9.19pt; line-height:12.82pt;">89</span
+                style="font-size:10.5pt; left:27.4pt; top:9.19pt; line-height:12.82pt;">{$scoresObj}</span
               >
             </div>
           </div>
@@ -657,7 +662,7 @@
             <div class="wcdiv" style="left:5.4pt; top:0.5pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:27.43pt; top:9.19pt; line-height:12.82pt;">88</span
+                style="font-size:10.5pt; left:27.43pt; top:9.19pt; line-height:12.82pt;">{$scoresObj}</span
               >
             </div>
           </div>
@@ -665,7 +670,7 @@
             <div class="wcdiv" style="left:5.4pt; top:0.5pt;">
               <span
                 class="wcspan wctext004"
-                style="font-size:10.5pt; left:27.43pt; top:9.19pt; line-height:12.82pt;">95</span
+                style="font-size:10.5pt; left:27.43pt; top:9.19pt; line-height:12.82pt;">{$scoresObj}</span
               >
             </div>
           </div>

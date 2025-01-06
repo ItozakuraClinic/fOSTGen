@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
 
   import { goodCourses, goodGrades, studentInfo } from '$lib/state';
 </script>
@@ -56,10 +56,12 @@
         <option value="pe">体育</option>
       </select>
     </div>
-    <div class="grid-col-1 grid-col-span-2 flex flex-row">
+    <div class="grid-col-1 grid-col-span-2 flex flex-col">
       {#each $goodCourses as grade}
-        <label for={grade}>{$goodGrades[grade]}</label>：
-        <input type="text" id={grade} name={grade} bind:value={$goodGrades[grade]} />
+        <div>
+          <label for={grade}>{grade}</label>：
+          <input type="text" id={grade} name={grade} bind:value={$goodGrades[grade]} />
+        </div>
       {/each}
     </div>
     <input type="submit" value="Submit" />

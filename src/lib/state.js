@@ -21,6 +21,13 @@ const courses = [
     'pe',
 ]
 
+const gradeRange = {
+    'A*': [95, 100],
+    'A': [90, 95],
+    'B':[80, 90],
+    'C':[70, 80]
+}
+
 const semestersToGenerate = writable(4)
 const globalLowerLimit = writable(85)
 const globalHigherLimit = 100
@@ -45,6 +52,10 @@ const goodCourses = writable(
     ]
 );
 
+const goodGrades = writable(
+    courses.reduce((acc, course) => ({...acc, [course]:'A*'}), {})
+);
+
 const gender = derived(studentInfo, ($studentInfo) => {
     return Number($studentInfo.idno.slice(-2, -1)) % 2 === 0
         ? { zh: '女', en: 'Female' }
@@ -59,19 +70,46 @@ const dob = derived(studentInfo, ($studentInfo) => {
     };
 });
 
-const goodGrades = derived(goodCourses, ($goodCourses) => {
-    const result = {};
-    $goodCourses.forEach((course) => {
+/**
+ * Generates a random integer between the specified minimum and maximum values, inclusive.
+ *
+ * @param {number} min - The minimum integer value (inclusive).
+ * @param {number} max - The maximum integer value (inclusive).
+ * @returns {number} A random integer between min and max.
+ */
+
+const getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+/**
+ * Generates an array of 4 random scores for a course.
+ *
+ * @param {string} course - The course to generate scores for.
+ * @returns {number[]} An array of 4 random scores for the course.
+ *
+ * If the course is considered a "good course", the scores will be generated
+ * between the 'A*' range. Otherwise, the scores will be generated between
+ * the global lower limit and 100.
+ */
+const genRandomScores = (course) => {
+    const result = Array(4).fill(0)
+    // @ts-ignore
+    if ($goodCourses.includes(course)) {
+        return result.map(() => getRandomInt(gradeRange['A*'][0], gradeRange['A*'][1]))
+    } else {
         // @ts-ignore
-        result[course] = $goodGrades[course] ? $goodGrades[course] : 'A*';
-    });
-    return result;
+        return result.map(() => getRandomInt($globalLowerLimit, globalHigherLimit))
+    }
+}
+
+const scoresObj = derived(goodCourses, () => {
+    courses.map(elem => {
+        return {
+            [elem]: genRandomScores(elem)
+        }
+    })
 })
 
-const score = derived(goodCourses, ($goodCourses) => {
-    courses.forEach(element => {
-
-    });
-})
-
-export { studentInfo, goodCourses, gender, dob, goodGrades };
+export { studentInfo, goodCourses, gender, dob, goodGrades, scoresObj };
